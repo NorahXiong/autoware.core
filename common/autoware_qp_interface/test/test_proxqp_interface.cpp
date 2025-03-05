@@ -80,6 +80,11 @@ TEST(TestProxqpInterface, BasicQp)
       check_result(solution, status);
       EXPECT_EQ(proxqp.getIterationNumber(), 0);
     }
+    {
+      proxqp.updateEpsAbs(1.0e-4);
+      proxqp.updateEpsRel(1.0e-4);
+      proxqp.updateVerbose(true);
+    }
   }
 }
 }  // namespace
